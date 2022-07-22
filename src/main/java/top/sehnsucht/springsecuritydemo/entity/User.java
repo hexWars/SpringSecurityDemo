@@ -1,5 +1,7 @@
 package top.sehnsucht.springsecuritydemo.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,14 +18,14 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-//@TableName(value = "sys_user")
+@TableName(value = "sys_user")
 public class User implements Serializable {
     private static final long serialVersionUID = -40356785423868312L;
 
     /**
      * 主键
      */
-//    @TableId
+    @TableId
     private Long id;
     /**
      * 用户名
