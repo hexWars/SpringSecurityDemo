@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
  * @CreateTime: 2022/7/17
  */
 @RestController
-public class TestController {
-    @RequestMapping("/test")
+public class HelloController {
+    @RequestMapping("/hello")
     public String testMapping() {
-        return "test";
+        return "hello";
     }
 }
