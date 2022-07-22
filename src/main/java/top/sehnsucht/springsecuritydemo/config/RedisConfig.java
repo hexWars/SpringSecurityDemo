@@ -1,4 +1,4 @@
-package top.sehnsucht.springsecuritydemo.confing;
+package top.sehnsucht.springsecuritydemo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
