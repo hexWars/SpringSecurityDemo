@@ -84,13 +84,13 @@ public class JwtUtil {
     public static void main(String[] args) throws Exception {
 
         //创建一个jwt令牌
-        //String jwt = createJWT("1234");
-        //System.out.println(jwt);
+//        String jwt = createJWT("1234");
+//        System.out.println(jwt);
 
         //解密jwt令牌
-        String token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkYTdiODllZDU3Mjk0ODgxYjJjMmI0NGRmM2U5NWIyNyIsInN1YiI6IjEyMzQiLCJpc3MiOiJoaHp6IiwiaWF0IjoxNjUzNzA2ODQxLCJleHAiOjE2NTM3MTA0NDF9.uChEJ2facTpFskswa4SvUFCgIlFxqRQlNDlrEAshkLM";
+        String token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhMjZmNDQ1N2UzOWU0ODA1OWY1Y2QxZTcyODg3MjdiNiIsInN1YiI6IjIiLCJpc3MiOiJoaHp6IiwiaWF0IjoxNjU4NTUzMDE0LCJleHAiOjE2NTg1NTY2MTR9.vllvBkmXNwB18PzkOi7fwDCtEzadeST-rd2HiiSSQdA";
         Claims claims = parseJWT(token);
-        System.out.println(claims);
+        System.out.println(claims.getSubject());
     }
 
     /**
