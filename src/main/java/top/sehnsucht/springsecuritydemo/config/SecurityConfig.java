@@ -1,5 +1,6 @@
 package top.sehnsucht.springsecuritydemo.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -9,6 +10,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import top.sehnsucht.springsecuritydemo.filter.JwtAuthenticationTokenFilter;
 
 /**
  * @Description:
@@ -17,6 +19,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
  */
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    @Autowired
+    private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -43,6 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/login").anonymous()
                 // 除上面外的所有请求全部需要鉴权认证
                 .anyRequest().authenticated();
+        http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
 //        http.cors();
     }
 }
