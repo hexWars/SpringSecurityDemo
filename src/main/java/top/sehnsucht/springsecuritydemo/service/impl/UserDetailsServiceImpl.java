@@ -17,7 +17,7 @@ import java.util.Objects;
  * @CreateTime: 2022/7/22
  */
 @Service
-public class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
+public class UserDetailsServiceImpl implements org.springframework.security.core.userdetails.UserDetailsService {
     @Autowired
     private UserMapper userMapper;
     @Override
