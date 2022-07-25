@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -18,6 +19,7 @@ import top.sehnsucht.springsecuritydemo.filter.JwtAuthenticationTokenFilter;
  * @CreateTime: 2022/7/22
  */
 @Configuration
+@EnableGlobalMethodSecurity(proxyTargetClass = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
