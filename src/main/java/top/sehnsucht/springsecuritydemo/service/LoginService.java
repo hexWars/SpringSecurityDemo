@@ -11,4 +11,6 @@ import top.sehnsucht.springsecuritydemo.vo.ResponseResult;
 
 public interface LoginService {
     ResponseResult login(User user);
+
+    ResponseResult logout();
 }

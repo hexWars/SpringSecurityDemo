@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- * @Description:
+ * @Description: OncePerRequestFilter是spring提供的过滤器实现类,继承OncePerRequestFilter保证一定会经过
  * @Author: Cai
  * @CreateTime: 2022/7/23
  */
@@ -33,7 +33,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         // 获取token
         String token = request.getHeader("token");
-        if (!StringUtils.hasText("token")) {
+        if (!StringUtils.hasText(token)) {
             filterChain.doFilter(request, response);
             return;
         }

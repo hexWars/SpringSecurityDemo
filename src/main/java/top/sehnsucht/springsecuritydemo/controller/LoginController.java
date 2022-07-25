@@ -15,8 +15,17 @@ import top.sehnsucht.springsecuritydemo.vo.ResponseResult;
 public class LoginController {
     @Autowired
     private LoginService loginService;
+
+    @PostMapping("/user/test")
+    public ResponseResult test() {
+        return new ResponseResult(200, "test");
+    }
     @PostMapping("/user/login")
-    public ResponseResult testMapping(@RequestBody User user) {
+    public ResponseResult login(@RequestBody User user) {
         return loginService.login(user);
+    }
+    @RequestMapping("/user/logout")
+    public ResponseResult logout() {
+        return loginService.logout();
     }
 }
