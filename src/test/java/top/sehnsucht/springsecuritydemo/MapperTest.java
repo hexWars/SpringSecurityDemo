@@ -22,11 +22,11 @@ public class MapperTest {
     @Test
     public void TestBCryptPasswordEncoder () {
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        String encode = bCryptPasswordEncoder.encode("sq0828");
-        String encode2 = bCryptPasswordEncoder.encode("sq0828");
+        String encode = bCryptPasswordEncoder.encode("bingo123");
+        String encode2 = bCryptPasswordEncoder.encode("bingo123");
         System.out.println(encode);
         System.out.println(encode2);
-        System.out.println(bCryptPasswordEncoder.matches("sq0828", encode));
+        System.out.println(bCryptPasswordEncoder.matches("bingo123", encode));
     }
 
     @Test

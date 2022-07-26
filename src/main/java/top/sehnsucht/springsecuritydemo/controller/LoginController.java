@@ -18,7 +18,7 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @PostMapping("/test")
+    @GetMapping("/test")
     public ResponseResult test() {
         return new ResponseResult(200, "test");
     }
