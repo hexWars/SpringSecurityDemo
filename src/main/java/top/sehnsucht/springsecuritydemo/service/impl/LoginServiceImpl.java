@@ -1,6 +1,5 @@
 package top.sehnsucht.springsecuritydemo.service.impl;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -12,9 +11,8 @@ import top.sehnsucht.springsecuritydemo.entity.User;
 import top.sehnsucht.springsecuritydemo.service.LoginService;
 import top.sehnsucht.springsecuritydemo.utils.JwtUtil;
 import top.sehnsucht.springsecuritydemo.utils.RedisCache;
-import top.sehnsucht.springsecuritydemo.vo.ResponseResult;
+import top.sehnsucht.springsecuritydemo.entity.ResponseResult;
 
-import java.lang.reflect.MalformedParameterizedTypeException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;

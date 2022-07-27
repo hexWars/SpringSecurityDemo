@@ -1,4 +1,4 @@
-package top.sehnsucht.springsecuritydemo.vo;
+package top.sehnsucht.springsecuritydemo.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

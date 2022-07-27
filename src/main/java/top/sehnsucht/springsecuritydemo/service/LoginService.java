@@ -1,7 +1,7 @@
 package top.sehnsucht.springsecuritydemo.service;
 
 import top.sehnsucht.springsecuritydemo.entity.User;
-import top.sehnsucht.springsecuritydemo.vo.ResponseResult;
+import top.sehnsucht.springsecuritydemo.entity.ResponseResult;
 
 /**
  * @Description:

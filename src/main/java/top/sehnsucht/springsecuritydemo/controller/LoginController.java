@@ -5,7 +5,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import top.sehnsucht.springsecuritydemo.entity.User;
 import top.sehnsucht.springsecuritydemo.service.LoginService;
-import top.sehnsucht.springsecuritydemo.vo.ResponseResult;
+import top.sehnsucht.springsecuritydemo.entity.ResponseResult;
 
 /**
  * @Description:
@@ -22,7 +22,7 @@ public class LoginController {
     public ResponseResult test() {
         return new ResponseResult(200, "test");
     }
-    @PreAuthorize("hasAnyAuthority('test')")
+    @PreAuthorize("hasAnyAuthority('common')")
     @PostMapping("/auth")
     public ResponseResult authTest() {
         return new ResponseResult(200, "authTest");
