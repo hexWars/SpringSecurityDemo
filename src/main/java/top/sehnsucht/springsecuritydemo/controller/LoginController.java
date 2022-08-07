@@ -22,7 +22,7 @@ public class LoginController {
     public ResponseResult test() {
         return new ResponseResult(200, "test");
     }
-    @PreAuthorize("hasAnyAuthority('common')")
+    @PreAuthorize("hasAnyAuthority('user:test')")
     @PostMapping("/auth")
     public ResponseResult authTest() {
         return new ResponseResult(200, "authTest");
