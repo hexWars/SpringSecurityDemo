@@ -34,7 +34,7 @@ public class UserDetailsServiceImpl implements org.springframework.security.core
         if (Objects.isNull(user)) {
             throw new RuntimeException("用户名或者密码错误");
         }
-        // 查询对应的权限信息
+        //todo 查询对应的权限信息
         List<String> list = new ArrayList<>(Arrays.asList("admin", "common"));
         // 把数据封装成UserDetails
         return new LoginUser(user, list);

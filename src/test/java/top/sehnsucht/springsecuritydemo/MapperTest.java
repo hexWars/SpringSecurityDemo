@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import top.sehnsucht.springsecuritydemo.entity.User;
+import top.sehnsucht.springsecuritydemo.mapper.MenuMapper;
 import top.sehnsucht.springsecuritydemo.mapper.UserMapper;
 
 import java.util.List;
@@ -27,6 +28,15 @@ public class MapperTest {
         System.out.println(encode);
         System.out.println(encode2);
         System.out.println(bCryptPasswordEncoder.matches("bingo123", encode));
+    }
+
+    @Autowired
+    private MenuMapper mapper;
+
+    @Test
+    public void testPermsByUserId() {
+        List<String> list = mapper.selectPermsByUserId(3L);
+        System.out.println(list);
     }
 
     @Test
