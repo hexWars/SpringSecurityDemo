@@ -12,7 +12,7 @@ import java.util.List;
  * @Author: Cai
  * @CreateTime: 2022/8/8
  */
-//@Component("ex")
+@Component("ex")
 public class MyExpressionRoot {
     public boolean hasAuthority(String authority) {
         // 测试是否通过
