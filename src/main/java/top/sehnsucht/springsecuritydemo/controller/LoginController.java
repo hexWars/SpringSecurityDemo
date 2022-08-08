@@ -27,6 +27,12 @@ public class LoginController {
     public ResponseResult authTest() {
         return new ResponseResult(200, "authTest");
     }
+
+    @PreAuthorize("hasAnyAuthority('user:test2')")
+    @PostMapping("/auth2")
+    public ResponseResult authTest2() {
+        return new ResponseResult(200, "authTest222");
+    }
     @PostMapping("/login")
     public ResponseResult login(@RequestBody User user) {
         return loginService.login(user);
