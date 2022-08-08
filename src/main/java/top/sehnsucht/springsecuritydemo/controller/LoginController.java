@@ -35,7 +35,11 @@ public class LoginController {
         return new ResponseResult(200, "authTest222");
     }
 
-    @PreAuthorize("@ex.hasAuthority('user:test')")
+    /**
+     * 该方法在SecurityConfig类中配置了权限
+     * @return
+     */
+//    @PreAuthorize("@ex.hasAuthority('user:test')")
     @PostMapping("/auth3")
     public ResponseResult authTest3() {
         return new ResponseResult(200, "authTest333");

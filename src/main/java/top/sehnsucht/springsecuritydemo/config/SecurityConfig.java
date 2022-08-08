@@ -55,6 +55,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 // 对于登录接口 允许匿名访问
                 .antMatchers("/user/login", "/user/test").anonymous()
+                // 除了注解配置权限以外的另一种配置方式:在配置类中配置权限
+                .antMatchers("/user/auth3").hasAuthority("user:test")
                 // 除上面外的所有请求全部需要鉴权认证
                 .anyRequest().authenticated();
         http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
