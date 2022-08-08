@@ -22,6 +22,7 @@ public class LoginController {
     public ResponseResult test() {
         return new ResponseResult(200, "test");
     }
+
     @PreAuthorize("hasAnyAuthority('user:test')")
     @PostMapping("/auth")
     public ResponseResult authTest() {
@@ -33,10 +34,12 @@ public class LoginController {
     public ResponseResult authTest2() {
         return new ResponseResult(200, "authTest222");
     }
+
     @PostMapping("/login")
     public ResponseResult login(@RequestBody User user) {
         return loginService.login(user);
     }
+
     @RequestMapping("/logout")
     public ResponseResult logout() {
         return loginService.logout();
